@@ -1,0 +1,436 @@
+@import 'normalize.css';
+@import 'variables.css';
+@import 'grid-system.css';
+
+/* General Settings */
+style, script, head {
+    display: none!important;
+}
+body, html {
+    font-size: 16px;
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: var(--background2);
+    overflow-x: hidden;
+}
+body * {
+    transition: .3s all;
+    box-sizing: border-box;
+    outline: none;
+}
+p, input, textarea, button, a {
+    font-size: 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: var(--t-color);
+    font-family: var(--t-font);
+}
+div {
+    display: inline-block;
+    vertical-align: middle;
+}
+img {
+    max-width: 100%;
+}
+
+/* scroll bars */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-button {
+    width: 10px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-color-dark);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--theme-color-light);
+    /* add color here*/
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* add color here*/
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+    /* add color here*/
+}
+
+::selection {
+    background: var(--color);
+    color: #fff;
+}
+#all-loader.ok {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.9s all;
+}
+
+.btn {
+    padding: 0.75em 1em;
+    border-radius: 8px;
+    background: var(--color);
+    color: var(--background);
+    text-decoration: none;
+    border: 1px solid var(--color);
+    margin: 1em auto 0 auto;
+    display: block;
+    text-align: center;
+}
+.btn:hover {
+    background: var(--background);
+    color: var(--color);
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 1em 0;
+    box-shadow: 0 0 10px 0 #00000059;
+    background-color: var(--background);
+    z-index: 999;
+}
+#header .grid * {
+    margin: 0;
+    vertical-align: middle;
+    line-height: 1em;
+}
+#header h1 {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-left: 1.5em;
+    padding-left: 1.5em;
+    position: relative;
+}
+#header .logo img {
+    height: 50px;
+    margin-right: 2em;
+}
+#header h1::before {
+    content: '';
+    height: 140%;
+    width: 1px;
+    background-color: var(--f-color2);
+    position: absolute;
+    top: -20%;
+    left: 0;
+}
+#main-site {
+    margin-top: 82px;
+}
+.welcome {
+    position: relative;
+}
+.welcome img {
+    background: var(--color2);
+    border-radius: 100px;
+    border: 2px solid var(--color);
+    vertical-align: middle;
+}
+.welcome p {
+    display: inline-block;
+    width: calc(100% - 105px);
+    vertical-align: middle;
+    background: var(--color2);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    position: relative;
+    margin: 0 0 1.5em 30px;
+    transition: none;
+    float: right;
+}
+.welcome p * {
+    transition: none; 
+}
+.welcome p.hi {
+    display: none;
+}
+.welcome p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -8px;
+    top: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transform: rotate(45deg);
+    background: var(--color2)
+}
+.welcome p.lo {
+    font-size: 0;
+}
+.welcome p.lo::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 22px;
+    background-image: url(../img/loading.gif);
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.hi {
+    display: none!important;
+}
+#simular, #resultado {
+    max-width: 600px;
+    display: block;
+    margin: 4em auto;
+    background-color: var(--background);
+    box-shadow: 0 0 10px 0 #00000059;
+    border-radius: 8px;
+    padding: 3em;
+    font-size: 1.1em;
+}
+form .field:first-child {
+    margin-top: 0;
+}
+form .field:last-child {
+    margin-bottom: 0;
+}
+form .field {
+    display: block;
+    position: relative;
+    margin: 1em 0;
+    background: var(--color);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+form .field label {
+    font-size: 1em;
+    position: absolute;
+    top: 50%;
+    left: 1.4em;
+    background-color: var(--color);
+    padding: 0.5em;
+    margin: 0;
+    line-height: 1em;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #fff;
+}
+form .field.fc label, form .field:hover label {
+    font-size: 0.75em;
+    top: 15px;
+    left: 2em;
+}
+form .field.instituicoes label, form .field.convenios label {
+    font-size: 1em;
+    position: relative;
+    left: inherit!important;
+    display: block;
+    pointer-events: all;
+    top: inherit!important;
+    transform: inherit!important;
+}
+form .field.instituicoes label input, form .field.convenios label input {
+    margin-right: 1em;
+}
+form .field input[type="text"], form .field input[type="tel"], form .field input[type="number"], form .field select {
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    width: 100%;
+    background: transparent;
+    color: #fff
+}
+form .field select option {
+    color: #000;
+}
+form .field a {
+    height: 40px;
+    width: 40px;
+    background: var(--color2);
+    position: absolute;
+    border-radius: 8px;
+    right: 20px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+form .field a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 3px;
+}
+form .field a:hover {
+    filter: brightness(0.8);
+}
+form button {
+    width: 100%;
+    background-color: var(--color);
+    border: 1px solid var(--color);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5em;
+    cursor: pointer ;
+}
+form button:hover {
+    background-color: #fff;
+    color: var(--color);
+}
+form .steps {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.us {
+    width: 100%;
+}
+.us p {
+    display: block;
+    position: relative;
+    margin: 1em 0;
+    background: var(--color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    float: right;
+    color: #fff;
+}
+.us p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -8px;
+    top: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transform: rotate(45deg);
+    background: var(--color)
+}
+#simular.hide, #resultado.hide {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;
+}
+#simular.loading {
+    position: relative;
+}
+#simular.loading::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(256, 256, 256, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    border-radius: 8px;
+}
+#simular.loading::after {
+    content: '';
+    display: block;
+    border-top: 2px solid #EF6C00;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    animation: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    z-index: 2;
+}
+#resultados {
+    width: 100%;
+    display: block;
+}
+#resultados h3, #resultados h4, #resultados ul {
+    margin: 0;
+}
+#resultados .op {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+#resultados > div:first-child {
+    border-top: 1px solid var(--color2);
+}
+#resultados > div {
+    padding: 1em 0;
+    border-bottom: 1px solid var(--color2);
+    width: 100%;
+    display: block;
+}
+@media screen and (max-width: 750px) {
+    #simular, #resultado {
+        margin: 2em auto;
+        padding: 2em;
+    }
+}
+@media screen and (max-width: 650px) {
+    #header .logo img {
+        height: 35px;
+    }
+    #header h1 {
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 550px) {
+    .welcome img {
+        width: 50px;
+        height: 50px
+    }
+    .welcome p {
+        width: calc(100% - 80px);
+    }
+}
+@media screen and (max-width: 475px) {
+    #header .logo img {
+        margin: 0 auto 1em auto;
+    }
+    #header h1 {
+        padding: 0;
+        display: block;
+    }
+    #header h1::before {
+        display: none;
+    }
+    #simular, #resultado {
+        padding: 1em;
+        font-size: 15px;
+    }
+}

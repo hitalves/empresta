@@ -1,0 +1,31 @@
+:root {
+    /* main theme color */
+    --color: #EF6C00;
+
+    /* secondary theme color */
+    --color2: #002e6e;
+    
+    /* background theme color */
+    --background: #fff;
+
+    /* secondary background theme color */
+    --background2: #eff2fa;
+
+    /* body font color */
+    --f-color: #212121;
+
+    /* secondary body font color */
+    --f-color2: #616161;
+
+    /* title font color */
+    --t-color: #002e6e;
+
+    /* secondary title font color */
+    --t-color2: #EF6C00;
+
+    /* body theme font */
+    --font: 'Roboto', 'Helvetica', 'Open Sans', 'Arial', sans-serif;
+
+    /* titles theme font */
+    --t-font: 'Roboto', 'Helvetica', 'Open Sans', 'Arial', sans-serif;
+}

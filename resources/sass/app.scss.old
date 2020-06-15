@@ -1,0 +1,8 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Normalize
+@import 'normalize.css';
+
+//Main style
+@import 'main.css';
